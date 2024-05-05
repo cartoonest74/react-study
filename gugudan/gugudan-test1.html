@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        'use strict';
+
+        const Gugudan=()=>{
+            const [gugu,setGugu]=React.useState({
+                first:Math.ceil(Math.random()*9),
+                second:Math.ceil(Math.random()*9),
+                value:'',
+                result:'',
+                comment:''
+            });
+
+            const calc_result=()=>{
+                        const result_v = gugu.first * gugu.second;
+                        const direct_v = document.querySelector('input[type="number"]').value;
+
+                        if(result_v == direct_v){
+                            return setGugu({result:true,
+                                first:Math.ceil(Math.random()*9),
+                                second:Math.ceil(Math.random()*9),
+                                value:'',
+                                comment:"정답입니다"+result_v
+                            });
+                        }
+                        setGugu({result:false,
+                            value:'',
+                            first:gugu.first,
+                            second:gugu.second,
+                            comment:"틀렸습니다"+result_v
+                        });
+                    }
+            
+            return(<React.Fragment>
+                    <div>{gugu.first} 곱하기 {gugu.second}</div>
+                        <input type="number" onChange={(e)=>{e.target.value}}/>
+                        <button type="button" onClick={calc_result}>click</button>
+                        <div>{gugu.comment}</div>
+                </React.Fragment>);
+        }
+    </script>
+    <script type="text/babel">
+        ReactDOM.createRoot(document.querySelector("#root")).render(<Gugudan/>);
+    </script>
+</body>
+</html>
