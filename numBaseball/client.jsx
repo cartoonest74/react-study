@@ -1,5 +1,5 @@
 const React = require("react");
-const ReactDom= require("react-dom/clie0nt");
+const ReactDom= require("react-dom/client");
 
 const BaseBall = require("./baseball");
 

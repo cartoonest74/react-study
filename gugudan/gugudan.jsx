@@ -26,7 +26,7 @@ const Gugudan=()=>{
         setValue(e.target.value);
         return e.target.value;
     }
-    console.log(111111)
+    
     return(
         <React.Fragment>
             <div>{first} x {second}</div>

@@ -22,8 +22,7 @@ module.exports={
                         targets:{
                             browsers:['> 5% in KR','last 2 chrome version']
                         },
-                    }],
-                    '@babel/preset-react',
+                    }],'@babel/preset-react',
                 ],
                 plugins:[
                   'react-refresh/babel',  
