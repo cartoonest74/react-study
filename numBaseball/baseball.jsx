@@ -1,5 +1,7 @@
 const React = require("react");
 const {Componet} = React;
+const {useState} = React;
+const {useRef} = React;
 const Try = require("./Try");
 
 const BaseBall =()=>{
@@ -15,11 +17,11 @@ const BaseBall =()=>{
         return ballNumber_list;
     };
 
-    const [reset,setReset] = React.useState(false);
-    const [tries,setTries] = React.useState([]);
-    const [answer,setAnswer] = React.useState(getNumbers());
-    const [result,setResult] = React.useState([]);
-    const inputRef = React.useRef(null);
+    const [reset,setReset] = useState(false);
+    const [tries,setTries] = useState([]);
+    const [answer,setAnswer] = useState(getNumbers); // lazy init
+    const [result,setResult] = useState([]);
+    const inputRef = useRef(null);
 
     const strike_click =()=>{
         const num_vaild = /\d{4}/g
@@ -36,13 +38,13 @@ const BaseBall =()=>{
         }
 
         if(batter_val.includes(answer.join(''))){
-            setTries([...tries,{try:batter_val, result:`Strike!!! GAME Reset!!`}]);
+            setTries((prevTries)=>[...prevTries,{try:batter_val, result:`Strike!!! GAME Reset!!`}]);
             setReset(true);
             return
         }
         
         if(tries.length == bat_chance-1){
-            setTries([...tries,{try:batter_val, result:`Result:${answer.join('')} OUT!!! GAME Reset!!`}]);
+            setTries((prevTries)=>[...prevTries,{try:batter_val, result:`Result:${answer.join('')} OUT!!! GAME Reset!!`}]);
             setReset(true);
             return
         }
@@ -58,7 +60,7 @@ const BaseBall =()=>{
                 ball_counter ++                
             }
         });
-        setTries([...tries,{try:batter_val, result:`Ball: ${ball_counter} Strike: ${strike_counter}`}]);
+        setTries((prevTries)=>[...prevTries,{try:batter_val, result:`Ball: ${ball_counter} Strike: ${strike_counter}`}]);
     }
     
     
