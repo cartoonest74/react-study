@@ -14,4 +14,6 @@ const Try =memo(({tryInfo})=>{
     );
 });
 
+Try.displayName ='Try';
+
 module.exports=Try;

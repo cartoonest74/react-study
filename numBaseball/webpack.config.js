@@ -1,11 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// process.env.NODE_ENV = 'production';
 
 module.exports={
     name:"numBaseball-setting",
-    mode:"development",
-    devtool:"eval",
+    mode:"development", // 실서비스: production
+    devtool:"eval", // 실서비스: hidden-source-map
     resolve:{
         extensions:['.js','.jsx']
     },

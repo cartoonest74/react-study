@@ -1,5 +1,5 @@
 const React = require("react");
-const {Componet} = React;
+const {PureComponent} = React;
 const {useState} = React;
 const {useRef} = React;
 const Try = require("./Try");
