@@ -75,7 +75,7 @@ const BaseBall =()=>{
         return setReset(false)
     }
 
-    return(<React.Fragment>
+    return(<React.Fragment>Z
             <div>
                 <h1>Number BaseBall!!!!!!</h1>
                 <input maxLength="4" ref={inputRef} name="number" id="batter_val" onChange={batter_input}/>
