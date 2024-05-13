@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockSiserPaper</title>
+    <style>
+        *{
+        box-sizing:border-box;
+        margin:0px;
+        font-size:10px;
+        }
+        html,body{
+            position:relative;
+            display:flex;
+            justify-content:center;
+            font-family:'Noto Sans KR', sans-serif;
+            width:100%;
+            padding-top:1vh;
+            font-size:10px;
+        }
+        .rsp_contain{
+            display:inline-block;
+            width:300px;
+            overflow:hidden;
+        }
+        #rsp_img{
+            margin-left:-60px;
+        }
+        .rsp_controll{
+            display:flex;
+            width:100%;
+            justify-content:space-around;
+        }
+        button[data-rsp-name]{
+            width:80px;
+            border:0px;
+            padding:5px 0px;
+            font-size:3em;
+            border-radius:5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./dist/app.js"></script>
+</body>
+</html>
